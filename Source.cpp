@@ -1,16 +1,21 @@
-#include <iostream>
+#include<iostream>
+#include<time.h>
+#include<ctime>
 using namespace std;
 
+
 int main() {
-	double i = 1;
+	srand(time(NULL));
 
+	
 
-	while (i > 0) {
-		cout << " pay your bill" << endl;
-		cin >> i;
-		cout << i*0.15 << endl;
-		system("pause");
+	while (1) {
+		cout << "*";
+		int snow = rand() % 100+ 1;
+	for (int i=0; i<snow; i++)
+		cout << " ";
+
 	}
 }
 
-	
+
