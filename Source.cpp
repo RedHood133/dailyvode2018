@@ -1,38 +1,51 @@
-#include <iostream>
+#include<iostream>
 #include<Windows.h>
+#include <ctime>
 using namespace std;
-
 //function declaration
-int pointless(int m, int n);
+char foodDrop(char location);
 
 
 int main() {
-	Beep(400, 500);//other funciton call!
-	//declare two variables
-	int x;
-	int y;
-	cout << "give me two numbers" << endl;
-	cin >> x;
-	cin >> y;
-
-	//function call
-	cout<<pointless(x, y);
+	srand(time(NULL));
+	char location = 'd'; //test with d and f
+	cout << foodDrop(location) << endl;;
 	system("pause");
 
-}//end of main
 
+}
+char foodDrop(char location) {
 
+	int num = rand() % 100 + 1;
 
-//function definition
-int pointless(int m, int n) {
-	//print out a box
-	for (int i = 0; i < m; i++) {
-		for (int j = 0; j < n; j++)
-			cout << "*";
-		cout << endl;
+	if (location == 'f') {
+		if (num <= 50) {
+			cout << "you got a berry!" << endl;
+			return 'b';
+		}
+		else {
+			cout << "you got a mushroom!" << endl;
+			return 'm';
+
+		}
+	}
+	else if (location == 'd') {
+		if (num <= 20) {
+			cout << "You got a berry!" << endl;
+			return 'b';
+		}
+		else if (num <= 40) {
+			cout << "You got a fruit!" << endl;
+			return 'f';
+		}
+		else if (num < 40) {
+			cout << "You found some cheese?" << endl;
+			return 'c';
+		}
 	}
 
-	Beep(n*100, n*100);
 
-	return m*n;
+	else
+		cout << "invalid location" << endl;
+
 }
