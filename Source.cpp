@@ -1,51 +1,23 @@
 #include<iostream>
-#include<Windows.h>
-#include <ctime>
+#include<string>
 using namespace std;
-//function declaration
-char foodDrop(char location);
-
-
 int main() {
-	srand(time(NULL));
-	char location = 'd'; //test with d and f
-	cout << foodDrop(location) << endl;;
-	system("pause");
+	int inventory[7];
+	bool hasfive = false;
 
+	cout << "enter item" << endl << endl;
+	for (int i = 0; i < 7; i++) {
 
-}
-char foodDrop(char location) {
-
-	int num = rand() % 100 + 1;
-
-	if (location == 'f') {
-		if (num <= 50) {
-			cout << "you got a berry!" << endl;
-			return 'b';
-		}
-		else {
-			cout << "you got a mushroom!" << endl;
-			return 'm';
-
-		}
-	}
-	else if (location == 'd') {
-		if (num <= 20) {
-			cout << "You got a berry!" << endl;
-			return 'b';
-		}
-		else if (num <= 40) {
-			cout << "You got a fruit!" << endl;
-			return 'f';
-		}
-		else if (num < 40) {
-			cout << "You found some cheese?" << endl;
-			return 'c';
-		}
+		cin >> inventory[i];
 	}
 
-
+	cout << "your inventory item was" << endl;
+	for (int i = 0; i < 7; i++)
+		if (inventory[i] == 5)
+			hasfive = true;
+	if (hasfive = true)
+		cout << "secret number!" << endl;
 	else
-		cout << "invalid location" << endl;
+		cout << "you suck" << endl;
 
 }
