@@ -1,0 +1,24 @@
+#include<iostream>
+#include<string>
+#include<ctime>
+using namespace std;
+int main() {
+	int x;
+	double sum = 0;
+	int biggest = o;
+	int temp;
+	cout << "how manny scores will you give me today?" << endl;
+	cin >> x;
+
+	for (int n = 1; n <= x; n++) {
+		cout << "input scores:";
+		cin >> temp;
+		sum += temp;
+		if (temp > biggest)
+			biggest = temp;
+
+	}
+	cout << "the average is" << sum / x << endl;
+	cout << "biggest number was" << biggest << endl;
+
+}
