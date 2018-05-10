@@ -1,0 +1,83 @@
+#include <iostream>
+using namespace std;
+void print_menu();
+void religion(int x);
+double celsius(double y);
+bool doexit = false;
+int F;
+int C;
+char input;
+int input2;
+int main() {
+	print_menu();
+	while (!doexit) {
+		cout << "command:";
+		cin >> input;
+		if (input == 'h')
+			cout << " q: quit" << endl << " h: help" << endl << " r: info about a religion" << endl << " t: temperature conversion" << endl;
+		if (input == 'r') {
+			cout << "Which religion?" << endl;
+			cin >> input2;
+			religion(input2);
+		}
+		if (input == 't') {
+			cout << "Give me a temp in F" << endl;
+			cin >> input2;
+			cout << celsius(input2);
+			//cout << ;
+		}
+		else if (input == 'q')
+			doexit = true;
+	}
+
+}
+void print_menu() {
+
+	cout << " q: quit, h: help, r : info about a religion, t : temperature conversion" << endl;
+
+
+}
+void religion(int x) {
+
+	switch (x) {
+	case 1:
+		cout << "Christianity	31.2%";
+		break;
+	case 2:
+		cout << "Islam	24.1%";
+		break;
+	case 3:
+		cout << "Secular/Nonreligious/Agnostic/Atheist	16%";
+		break;
+	case 4:
+		cout << "Hinduism	15.1%";
+		break;
+	case 5:
+		cout << "Buddhism	 6.9%";
+		break;
+	case 6:
+		cout << "Chinese traditional religion	 5.50%";
+		break;
+	case 7:
+		cout << "Ethnic religions	 4.19%";
+		break;
+	case 8:
+		cout << "African traditional religions	 1.40%";
+		break;
+	case 9:
+		cout << "Sikhism	 0.32%";
+		break;
+	case 10:
+		cout << "Spiritism	 0.21%";
+		break;
+	default:
+		cout << "I don't know religion" << x << endl;
+
+	}cout << endl;
+}
+double celsius(double y) {
+	return (y - 32) * 9 / 5;
+
+
+
+}
