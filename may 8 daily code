@@ -1,0 +1,16 @@
+#include<iostream>
+#include<ctime>
+using namespace std;
+
+// remember to put Is instead of 1s in your arrays
+int main() {
+	srand(time(NULL));
+	int MyArray[10];
+	for (int i = 0; i < 10; i++)
+		MyArray[i] = rand() % 4 + 1;
+
+	for (int i = 0; i < 10; i++)
+		cout << MyArray[i] << " ";
+	cout << endl << endl;
+	system("pause");
+}
