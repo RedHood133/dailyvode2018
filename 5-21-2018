@@ -1,0 +1,26 @@
+#include<iostream>
+#include<allegro5/allegro.h>
+#include<allegro5/allegro_primitives.h>
+using namespace std;
+int main() {
+	al_init();
+	al_init_primitives_addon();
+
+	ALLEGRO_DISPLAY*display = al_create_display(1000, 1000);
+
+	al_clear_to_color(al_map_rgb(255, 255, 244));
+
+	for (int i = 1; i < 25; i++) {
+	al_draw_rectangle(20*i*i*i*i*i, 20, 50*i, 50*i*i, al_map_rgb(50*i, 50, 50*i), 5*i);
+}
+	for (int i = 0; i < 10; i++) {
+		al_draw_triangle(20 * i*i, 20 * i, 50 * i, 50 * i*i,20,20*i, al_map_rgb(50 * i, 5 * i, 50), 5 * i);
+	}
+	for (int i = 3; i < 5; i++) {
+		al_draw_rectangle(20 * i, 20, 50 * i*i, 50 * i*i*i, al_map_rgb(50 * i*i, 50, 50 * i), 5 * i);
+	}
+	al_flip_display();
+	al_rest(30);
+	al_destroy_display(display);
+
+}
